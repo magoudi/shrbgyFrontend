@@ -97,6 +97,7 @@ const NextComponent = (props: { setNextPage: () => void }) => {
         }}
       >
         <Container>
+          
           <Typography color="primary" sx={{ fontSize: "1rem" }}>
             The Design Interview
           </Typography>
