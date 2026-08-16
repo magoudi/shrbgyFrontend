@@ -48,7 +48,7 @@ const CheckList = (props: {
       <FormGroup>
         <Grid container spacing={0}>
           <Grid size={{ xs: 12, md: 6 }}>
-            <Grid size={{ xs: 6, md: 6 }}>
+            <Grid size={{ xs: 6, md: 3 }}>
               <FormControlLabel
                 control={
                   <Checkbox
@@ -130,10 +130,10 @@ const CheckList = (props: {
                 label="Wisdom"
               />
             </Grid>
-            <Grid size={{ xs: 6, md: 6 }} />
+            <Grid size={{ xs: 6, md: 9 }} />
           </Grid>
           <Grid size={{ xs: 6, md: 6 }}>
-            <Grid size={{ xs: 6, md: 6 }}>
+            <Grid size={{ xs: 6, md: 3 }}>
               <FormControlLabel
                 control={
                   <Checkbox
@@ -205,6 +205,7 @@ const CheckList = (props: {
                 label="Curiosity"
               />
             </Grid>
+            <Grid size={{ xs: 6, md: 9 }} />
           </Grid>
           <Grid size={{ xs: 0, md: 6 }} />
         </Grid>

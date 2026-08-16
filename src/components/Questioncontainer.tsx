@@ -4,6 +4,7 @@ import { form } from "../constants";
 
 const Container = styled(Box)(({ theme }) => ({
   width: "100%",
+  margin: "50px 0",
   borderWidth: 1,
   borderColor: theme.palette.secondary.light,
   borderStyle: "solid",

@@ -22,6 +22,7 @@ const Container = styled(Box)(({ theme }) => ({
   padding: "40px",
   background: theme.palette.background.paper,
   boxShadow: `0px 8px 24px ${theme.palette.primary.main}60`,
+  margin: "20px",
   "@media only screen and (max-width: 767px)": {
     padding: "20px",
     width: "100%",
