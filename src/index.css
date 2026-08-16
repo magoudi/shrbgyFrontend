@@ -17,6 +17,13 @@
   --mono: ui-monospace, Consolas, monospace;
 
   --page-background:
+    linear-gradient(
+      to bottom,
+      #08060d 0%,
+      transparent 12%,
+      transparent 88%,
+      #08060d 100%
+    ),
     radial-gradient(
       ellipse at 20% 35%,
       rgba(252, 250, 132, 0.06) 0%,
@@ -81,8 +88,7 @@ body {
 
 .app-page {
   width: 100%;
-  min-height: 100dvh;
-
+  min-height: 100svh;
   box-sizing: border-box;
 
   padding-top: env(safe-area-inset-top, 0px);

@@ -66,7 +66,7 @@ const ThankYouPage = () => {
         sx={{
           justifyContent: "center",
           alignItems: "center",
-          minHeight: "100%",
+          flex: 1,
           width: "100%",
         }}
       >
