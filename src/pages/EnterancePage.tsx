@@ -422,8 +422,7 @@ const EnterancePage = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100%",
-        minHeight: "100dvh",
+        minHeight: "100lvh",
         paddingTop: "env(safe-area-inset-top)",
         paddingBottom: "env(safe-area-inset-bottom)",
         background: `
