@@ -52,97 +52,116 @@ const Tick = styled(Box)(({ theme }) => ({
 
 const ThankYouPage = () => {
   return (
-    <Grid
-      container
+    <Box
       sx={{
+        display: "flex",
+        overflow: "hidden",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100vh",
+        minHeight: "100dvh",
+        paddingTop: "env(safe-area-inset-top)",
+        paddingBottom: "env(safe-area-inset-bottom)",
+        background: `
+          radial-gradient(ellipse at 20% 35%, rgba(252, 250, 132, 0.06) 0%, transparent 55%),
+          radial-gradient(ellipse at 80% 65%, rgba(250, 247, 96, 0.04) 0%, transparent 55%),
+          radial-gradient(ellipse at 50% 50%, rgba(45, 45, 27, 0.4) 0%, transparent 70%),
+          radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.35) 100%),
+          #08060d
+        `,
       }}
     >
-      <Grid size={{ xs: 1, md: 3 }} />
       <Grid
-        size={{ xs: 10, md: 6 }}
+        container
         sx={{
-          display: "flex",
-          alignItems: "center",
           justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
         }}
       >
-        <Container>
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Circle>
-              <Tick />
-            </Circle>
-          </Box>
-          <Typography
-            color="primary"
-            sx={{ fontSize: "0.9", fontWeight: "350" }}
-          >
-            SUBMISSION COMPLETE
-          </Typography>
-          <Typography
-            variant="h1"
-            sx={{
-              color: "white",
-              fontFamily: "Cormorant Garamond",
-              fontWeight: "bold",
-              margin: "20px 0px",
-              "@media only screen and (max-width: 767px)": {
-                fontSize: "3rem",
-              },
-            }}
-          >
-            Thank you!
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "1.2rem",
-              marginBottom: "20px",
-              "@media only screen and (max-width: 767px)": {
+        <Grid size={{ xs: 1, md: 3 }} />
+        <Grid
+          size={{ xs: 10, md: 6 }}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Container>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Circle>
+                <Tick />
+              </Circle>
+            </Box>
+            <Typography
+              color="primary"
+              sx={{ fontSize: "0.9", fontWeight: "350" }}
+            >
+              SUBMISSION COMPLETE
+            </Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                color: "white",
+                fontFamily: "Cormorant Garamond",
+                fontWeight: "bold",
+                margin: "20px 0px",
+                "@media only screen and (max-width: 767px)": {
+                  fontSize: "3rem",
+                },
+              }}
+            >
+              Thank you!
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "1.2rem",
+                marginBottom: "20px",
+                "@media only screen and (max-width: 767px)": {
+                  fontSize: "1rem",
+                },
+              }}
+            >
+              Your details have been received.
+            </Typography>
+            <Typography
+              sx={{
                 fontSize: "1rem",
-              },
-            }}
-          >
-            Your details have been received.
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              marginBottom: "10px",
-              "@media only screen and (max-width: 767px)": {
-                fontSize: "0.8rem",
-              },
-            }}
-          >
-            SHRGY is currently in its private soft launch. You'll receive an
-            email soon with a personal link to access your portal.
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Line />
-          </Box>
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              marginBottom: "10px",
-              "@media only screen and (max-width: 767px)": {
-                fontSize: "0.8rem",
-              },
-            }}
-          >
-            Please keep an eye on your inbox.
-          </Typography>
-        </Container>
+                marginBottom: "10px",
+                "@media only screen and (max-width: 767px)": {
+                  fontSize: "0.8rem",
+                },
+              }}
+            >
+              SHRGY is currently in its private soft launch. You'll receive an
+              email soon with a personal link to access your portal.
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Line />
+            </Box>
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                marginBottom: "10px",
+                "@media only screen and (max-width: 767px)": {
+                  fontSize: "0.8rem",
+                },
+              }}
+            >
+              Please keep an eye on your inbox.
+            </Typography>
+          </Container>
+        </Grid>
+        <Grid size={{ xs: 1, md: 3 }} />
       </Grid>
-      <Grid size={{ xs: 1, md: 3 }} />
-    </Grid>
+    </Box>
   );
 };
 
