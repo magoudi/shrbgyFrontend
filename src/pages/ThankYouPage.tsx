@@ -8,7 +8,6 @@ const Container = styled(Box)(({ theme }) => ({
   borderStyle: "solid",
   padding: "40px",
   margin: "50px 0",
-
   background: theme.palette.background.paper,
   boxShadow: `0px 8px 24px ${theme.palette.primary.main}60`,
   textAlign: "center",
@@ -61,8 +60,10 @@ const ThankYouPage = () => {
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100dvh",
+        width: "100%",
         paddingTop: "env(safe-area-inset-top)",
         paddingBottom: "env(safe-area-inset-bottom)",
+        overflowX: "hidden",
         background: `
           radial-gradient(ellipse at 20% 35%, rgba(252, 250, 132, 0.06) 0%, transparent 55%),
           radial-gradient(ellipse at 80% 65%, rgba(250, 247, 96, 0.04) 0%, transparent 55%),
@@ -77,8 +78,8 @@ const ThankYouPage = () => {
         sx={{
           justifyContent: "center",
           alignItems: "center",
-          minHeight: "100vh",
-          width: "100vw",
+          minHeight: "100%",
+          width: "100%",
         }}
       >
         <Grid size={{ xs: 1, md: 3 }} />

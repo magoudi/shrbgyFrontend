@@ -190,9 +190,12 @@ const FormPage = () => {
       sx={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100lvh",
-        overflow: "scroll",
+        alignItems: "stretch",
+        width: "100%",
+        minHeight: "100dvh",
+        paddingTop: "env(safe-area-inset-top)",
+        paddingBottom: "env(safe-area-inset-bottom)",
+        overflowX: "hidden",
         background: `
           radial-gradient(ellipse at 20% 35%, rgba(252, 250, 132, 0.06) 0%, transparent 55%),
           radial-gradient(ellipse at 80% 65%, rgba(250, 247, 96, 0.04) 0%, transparent 55%),
@@ -202,7 +205,14 @@ const FormPage = () => {
         `,
       }}
     >
-      <Grid container sx={{ width: "100vw" }}>
+      <Grid
+        container
+        sx={{
+          width: "100%",
+          minHeight: "100dvh",
+          alignItems: "center",
+        }}
+      >
         <Grid size={{ xs: 1, md: 3 }} />
         <Grid
           size={{ xs: 10, md: 6 }}
