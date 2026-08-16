@@ -55,7 +55,7 @@ const ThankYouPage = () => {
     <Box
       sx={{
         display: "flex",
-        overflow: "hidden",
+        position: "relative",
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100dvh",

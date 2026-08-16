@@ -418,6 +418,7 @@ const EnterancePage = () => {
   return (
     <Box
       sx={{
+        position: "relative",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

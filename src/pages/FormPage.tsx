@@ -189,12 +189,13 @@ const FormPage = () => {
     <Grid
       container
       sx={{
+        position: "relative",
+        display: "flex",
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100dvh",
         paddingTop: "env(safe-area-inset-top)",
         paddingBottom: "env(safe-area-inset-bottom)",
-        overflow: "hidden",
         background: `
             radial-gradient(ellipse at 20% 35%, rgba(252, 250, 132, 0.06) 0%, transparent 55%),
             radial-gradient(ellipse at 80% 65%, rgba(250, 247, 96, 0.04) 0%, transparent 55%),
