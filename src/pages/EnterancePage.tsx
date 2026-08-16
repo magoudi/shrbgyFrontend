@@ -84,7 +84,8 @@ const NextComponent = (props: { setNextPage: () => void }) => {
       sx={{
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100vh",
+        minHeight: "100%",
+        width: "100%",
       }}
     >
       <Grid size={{ xs: 1, md: 3 }} />
@@ -246,8 +247,8 @@ const GetInfo = () => {
       sx={{
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100vh",
-        width: "100vw",
+        minHeight: "100%",
+        width: "100%",
       }}
     >
       <Grid size={{ xs: 1, md: 3 }} />
@@ -418,36 +419,62 @@ const EnterancePage = () => {
 
   return (
     <Box
+      className="app-page"
       sx={{
-        position: "sticky",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100lvh",
         overflow: "hidden",
-        background: `
-          radial-gradient(ellipse at 20% 35%, rgba(252, 250, 132, 0.06) 0%, transparent 55%),
-          radial-gradient(ellipse at 80% 65%, rgba(250, 247, 96, 0.04) 0%, transparent 55%),
-          radial-gradient(ellipse at 50% 50%, rgba(45, 45, 27, 0.4) 0%, transparent 70%),
-          radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.35) 100%),
-          #08060d
-        `,
+        padding: 0,
       }}
     >
       <Fade in={showLogo} timeout={1000} unmountOnExit>
-        <Box sx={{ position: "absolute" }}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "env(safe-area-inset-top, 0px)",
+            right: "env(safe-area-inset-right, 0px)",
+            bottom: "env(safe-area-inset-bottom, 0px)",
+            left: "env(safe-area-inset-left, 0px)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <LogoXShrbgy />
         </Box>
       </Fade>
 
       <Fade in={showNextComponent} timeout={1000}>
-        <Box sx={{ position: "absolute" }}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "env(safe-area-inset-top, 0px)",
+            right: "env(safe-area-inset-right, 0px)",
+            bottom: "env(safe-area-inset-bottom, 0px)",
+            left: "env(safe-area-inset-left, 0px)",
+            overflowX: "hidden",
+            overflowY: "auto",
+            WebkitOverflowScrolling: "touch",
+          }}
+        >
           <NextComponent setNextPage={setNextPage} />
         </Box>
       </Fade>
 
       <Fade in={showGetInfo} timeout={1000}>
-        <Box sx={{ position: "absolute" }}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "env(safe-area-inset-top, 0px)",
+            right: "env(safe-area-inset-right, 0px)",
+            bottom: "env(safe-area-inset-bottom, 0px)",
+            left: "env(safe-area-inset-left, 0px)",
+            overflowX: "hidden",
+            overflowY: "auto",
+            WebkitOverflowScrolling: "touch",
+          }}
+        >
           <GetInfo />
         </Box>
       </Fade>
