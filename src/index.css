@@ -118,17 +118,3 @@ code {
   font-style: normal;
   font-display: swap;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  width: 100%;
-  min-height: 100dvh;
-  margin: 0;
-  padding: 0;
-  background-color: #08060d; /* Match your page background */
-}

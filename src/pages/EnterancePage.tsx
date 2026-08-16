@@ -94,7 +94,6 @@ const NextComponent = (props: { setNextPage: () => void }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "100vw",
         }}
       >
         <Container>
