@@ -11,6 +11,7 @@ import {
 import CheckList from "../components/CheckList.tsx";
 import SliderList from "../components/SliderList.tsx";
 import ThreeTextFeilds, { type q9 } from "../components/ThreeTextFeilds.tsx";
+import { useNavigate } from "react-router-dom";
 
 let i = 0;
 
@@ -72,6 +73,8 @@ const FormPage = () => {
   const [error, setError] = useState<boolean>(false);
 
   const [errorsQ9, setErrorsQ9] = useState<errorsQ9Interface>(emptyErrors);
+
+  const navigate = useNavigate();
 
   const {
     Loyalty,
@@ -136,14 +139,13 @@ const FormPage = () => {
       q9: updatedQ9,
     }));
 
-    setErrorsQ9({
-      w1: updatedQ9.w1.trim().length === 0,
-      w2: updatedQ9.w2.trim().length === 0,
-      w3: updatedQ9.w3.trim().length === 0,
-    });
+    setErrorsQ9((previousErrors) => ({
+      w1: previousErrors.w1 && updatedQ9.w1.trim().length === 0,
+      w2: previousErrors.w2 && updatedQ9.w2.trim().length === 0,
+      w3: previousErrors.w3 && updatedQ9.w3.trim().length === 0,
+    }));
   };
   const nextQuestion = () => {
-    if (i == form.length - 1) return;
     if (question.index == 4 && errorq4) {
       return;
     }
@@ -168,6 +170,10 @@ const FormPage = () => {
       if (newErrors.w1 || newErrors.w2 || newErrors.w3) {
         return;
       }
+    }
+    if (question.index == form.length) {
+      navigate("/thankyou");
+      return;
     }
     i++;
     setQuestion(form[i]);

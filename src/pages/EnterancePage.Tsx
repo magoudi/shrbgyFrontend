@@ -97,7 +97,6 @@ const NextComponent = (props: { setNextPage: () => void }) => {
         }}
       >
         <Container>
-          
           <Typography color="primary" sx={{ fontSize: "1rem" }}>
             The Design Interview
           </Typography>
@@ -121,18 +120,23 @@ const NextComponent = (props: { setNextPage: () => void }) => {
             sx={{
               fontFamily: "Cormorant Garamond",
               fontWeight: "bold",
+              color: "white",
+              marginBottom: "20px",
               "@media only screen and (max-width: 767px)": {
-                fontSize: "1rem",
+                marginBottom: "10px",
+                fontSize: "1.2rem",
               },
             }}
           >
-            Before you begin
+            Before you begin.
           </Typography>
           <Typography
             variant="h5"
             sx={{
               fontFamily: "Cormorant Garamond",
+              marginBottom: "20px",
               "@media only screen and (max-width: 767px)": {
+                marginBottom: "10px",
                 fontSize: "1rem",
               },
             }}
@@ -143,7 +147,11 @@ const NextComponent = (props: { setNextPage: () => void }) => {
             variant="h5"
             sx={{
               fontFamily: "Cormorant Garamond",
+              marginBottom: "40px",
+
               "@media only screen and (max-width: 767px)": {
+                marginBottom: "15px",
+
                 fontSize: "1rem",
               },
             }}
@@ -178,6 +186,7 @@ const NextComponent = (props: { setNextPage: () => void }) => {
             variant="h5"
             sx={{
               fontFamily: "Cormorant Garamond",
+              marginBottom: "10px",
               "@media only screen and (max-width: 767px)": {
                 fontSize: "1rem",
               },
@@ -185,27 +194,36 @@ const NextComponent = (props: { setNextPage: () => void }) => {
           >
             That's where the most meaningful design begin.
           </Typography>
-          <Button
-            variant="contained"
-            sx={{ borderRadius: 0, marginTop: "20px" }}
-            onClick={props.setNextPage}
+          <Box
+            sx={{
+              textAlign: "right",
+              "@media only screen and (max-width: 767px)": {
+                textAlign: "center",
+              },
+            }}
           >
-            <Typography
-              variant="h5"
-              sx={{
-                margin: "0 20px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                "@media only screen and (max-width: 767px)": {
-                  fontSize: "1rem",
-                  margin: "0 10px",
-                },
-              }}
+            <Button
+              variant="contained"
+              sx={{ borderRadius: 0, marginTop: "20px" }}
+              onClick={props.setNextPage}
             >
-              BEGIN
-            </Typography>
-          </Button>
+              <Typography
+                variant="h5"
+                sx={{
+                  margin: "0 20px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  "@media only screen and (max-width: 767px)": {
+                    fontSize: "1rem",
+                    margin: "0 10px",
+                  },
+                }}
+              >
+                BEGIN
+              </Typography>
+            </Button>
+          </Box>
         </Container>
       </Grid>
       <Grid size={{ xs: 1, md: 3 }} />
@@ -400,7 +418,7 @@ const EnterancePage = () => {
   return (
     <Box
       sx={{
-        position: "relative",
+        position: "sticky",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

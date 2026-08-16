@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import EnterancePage from "./pages/EnterancePage";
 import FormPage from "./pages/FormPage";
+import ThankYouPage from "./pages/ThankYouPage";
 
 declare module "@mui/material/styles" {
   interface TypeBackground {
@@ -43,6 +44,7 @@ function App() {
         <Routes>
           <Route path="/" element={<EnterancePage />} />
           <Route path="/form" element={<FormPage />} />
+          <Route path="/thankyou" element={<ThankYouPage />} />
         </Routes>
       </ThemeProvider>
     </>
