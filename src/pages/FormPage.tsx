@@ -188,7 +188,6 @@ const FormPage = () => {
   return (
     <Box
       sx={{
-        position: "sticky",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

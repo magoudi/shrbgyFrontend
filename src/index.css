@@ -130,7 +130,3 @@ body,
   padding: 0;
   background-color: #08060d; /* Match your page background */
 }
-
-body {
-  overflow: hidden;
-}
