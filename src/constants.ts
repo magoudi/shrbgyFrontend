@@ -10,10 +10,7 @@ export const customerInfoSchema = Yup.object({
     .trim()
     .required("Email is required")
     .email("Enter a valid email address")
-    .matches(
-      /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
-      "Email must include a valid domain, such as example.com",
-    ),
+    .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, "Enter a valid email address"),
 
   phoneNumber: Yup.string()
     // Remove spaces, brackets, and hyphens before validation
