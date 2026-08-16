@@ -56,83 +56,35 @@
 }
 
 html {
-  width: 100%;
   min-height: 100%;
   margin: 0;
-  padding: 0;
-
-  /*
-   * Safari uses the root canvas behind Liquid Glass,
-   * so the complete background belongs here.
-   */
-  background:
-    radial-gradient(
-      ellipse at 20% 35%,
-      rgba(252, 250, 132, 0.06) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 80% 65%,
-      rgba(250, 247, 96, 0.04) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 50% 50%,
-      rgba(45, 45, 27, 0.4) 0%,
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse at 50% 50%,
-      transparent 60%,
-      rgba(0, 0, 0, 0.35) 100%
-    ),
-    #08060d;
-
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: var(--page-background);
 }
 
 body {
-  width: 100%;
   min-height: 100%;
   margin: 0;
-  padding: 0;
 
-  /*
-   * Safari must scroll the document normally.
-   */
   overflow-x: hidden;
   overflow-y: auto;
+
+  /* Prevent Safari’s rubber-band movement when nothing overflows */
+  overscroll-behavior-y: none;
 
   background: transparent;
 }
 
 #root {
-  width: 100%;
   min-height: 100%;
-  margin: 0;
-  padding: 0;
-
   background: transparent;
 }
 
 .app-page {
-  position: relative;
-
   width: 100%;
-
-  /*
-   * Fill the currently visible viewport.
-   * Because this is min-height, it grows only when content requires it.
-   */
   min-height: 100dvh;
 
   box-sizing: border-box;
 
-  /*
-   * Background remains visible behind the transparent Safari UI,
-   * while content remains inside the safe areas.
-   */
   padding-top: env(safe-area-inset-top, 0px);
   padding-right: env(safe-area-inset-right, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);

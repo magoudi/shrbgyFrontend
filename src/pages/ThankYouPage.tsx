@@ -7,7 +7,7 @@ const Container = styled(Box)(({ theme }) => ({
   borderColor: theme.palette.secondary.light,
   borderStyle: "solid",
   padding: "40px",
-  margin: "50px 0",
+  //   margin: "50px 0",
   background: theme.palette.background.paper,
   boxShadow: `0px 8px 24px ${theme.palette.primary.main}60`,
   textAlign: "center",
