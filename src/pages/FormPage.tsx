@@ -187,29 +187,18 @@ const FormPage = () => {
   };
   return (
     <Box
+      className="app-page"
       sx={{
         display: "flex",
         justifyContent: "center",
         alignItems: "stretch",
-        width: "100%",
-        minHeight: "100dvh",
-        paddingTop: "env(safe-area-inset-top)",
-        paddingBottom: "env(safe-area-inset-bottom)",
-        overflowX: "hidden",
-        background: `
-          radial-gradient(ellipse at 20% 35%, rgba(252, 250, 132, 0.06) 0%, transparent 55%),
-          radial-gradient(ellipse at 80% 65%, rgba(250, 247, 96, 0.04) 0%, transparent 55%),
-          radial-gradient(ellipse at 50% 50%, rgba(45, 45, 27, 0.4) 0%, transparent 70%),
-          radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.35) 100%),
-          #08060d
-        `,
       }}
     >
       <Grid
         container
         sx={{
           width: "100%",
-          minHeight: "100dvh",
+          minHeight: "100%",
           alignItems: "center",
         }}
       >
