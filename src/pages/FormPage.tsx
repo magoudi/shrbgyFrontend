@@ -1,4 +1,4 @@
-import { Grid, TextField, Typography } from "@mui/material";
+import { Box, Grid, TextField, Typography } from "@mui/material";
 import Questioncontainer from "../components/Questioncontainer";
 import { useState } from "react";
 import {
@@ -186,105 +186,112 @@ const FormPage = () => {
     setQuestion(form[i]);
   };
   return (
-    <Grid
-      container
+    <Box
       sx={{
-        position: "relative",
+        position: "sticky",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        minHeight: "100dvh",
-        paddingTop: "env(safe-area-inset-top)",
-        paddingBottom: "env(safe-area-inset-bottom)",
+        minHeight: "100lvh",
+        overflow: "auto",
         background: `
-            radial-gradient(ellipse at 20% 35%, rgba(252, 250, 132, 0.06) 0%, transparent 55%),
-            radial-gradient(ellipse at 80% 65%, rgba(250, 247, 96, 0.04) 0%, transparent 55%),
-            radial-gradient(ellipse at 50% 50%, rgba(45, 45, 27, 0.4) 0%, transparent 70%),
-            radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.35) 100%),
-            #08060d
-          `,
+          radial-gradient(ellipse at 20% 35%, rgba(252, 250, 132, 0.06) 0%, transparent 55%),
+          radial-gradient(ellipse at 80% 65%, rgba(250, 247, 96, 0.04) 0%, transparent 55%),
+          radial-gradient(ellipse at 50% 50%, rgba(45, 45, 27, 0.4) 0%, transparent 70%),
+          radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.35) 100%),
+          #08060d
+        `,
       }}
     >
-      <Grid size={{ xs: 1, md: 3 }} />
-      <Grid
-        size={{ xs: 10, md: 6 }}
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-      >
-        <Questioncontainer
-          index={question.index}
-          section={question.section}
-          question={question.question}
-          description={question.description}
-          helper={question.helper}
-          nextQuestion={nextQuestion}
-          back={back}
+      <Grid container>
+        <Grid size={{ xs: 1, md: 3 }} />
+        <Grid
+          size={{ xs: 10, md: 6 }}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          {question.index == 4 ? (
-            <CheckList value={answers.q4} onChange={handleChangeq4} />
-          ) : question.index == 8 ? (
-            <SliderList value={answers.q8} onChange={handleChangeq8} />
-          ) : question.index == 9 ? (
-            <ThreeTextFeilds
-              answers={answers.q9}
-              setAnswers={handleChangeq9}
-              errors={errorsQ9}
-            />
-          ) : (
-            <>
-              <TextField
-                multiline
-                placeholder=""
-                variant="outlined"
-                fullWidth
-                rows={5}
-                value={answers[answersMap[i] as keyof answersInterface]}
-                onChange={(e) => {
-                  setAnswers({
-                    ...answers,
-                    [answersMap[i] as keyof answersInterface]: e.target.value,
-                  });
-                  if (
-                    (answers[answersMap[i] as keyof answersInterface] as string)
-                      .length >=
-                    minChars[i] - 1
-                  ) {
-                    setError(false);
-                  }
-                }}
-                error={error}
-                helperText={
-                  (answers[answersMap[i] as keyof answersInterface] as string)
-                    .length > 0
-                    ? (
+          <Questioncontainer
+            index={question.index}
+            section={question.section}
+            question={question.question}
+            description={question.description}
+            helper={question.helper}
+            nextQuestion={nextQuestion}
+            back={back}
+          >
+            {question.index == 4 ? (
+              <CheckList value={answers.q4} onChange={handleChangeq4} />
+            ) : question.index == 8 ? (
+              <SliderList value={answers.q8} onChange={handleChangeq8} />
+            ) : question.index == 9 ? (
+              <ThreeTextFeilds
+                answers={answers.q9}
+                setAnswers={handleChangeq9}
+                errors={errorsQ9}
+              />
+            ) : (
+              <>
+                <TextField
+                  multiline
+                  placeholder=""
+                  variant="outlined"
+                  fullWidth
+                  rows={5}
+                  value={answers[answersMap[i] as keyof answersInterface]}
+                  onChange={(e) => {
+                    setAnswers({
+                      ...answers,
+                      [answersMap[i] as keyof answersInterface]: e.target.value,
+                    });
+                    if (
+                      (
                         answers[
                           answersMap[i] as keyof answersInterface
                         ] as string
-                      ).length
-                    : undefined
-                }
-                sx={{
-                  "& .MuiFormHelperText-root": {
-                    textAlign: "right",
-                    marginRight: 0,
-                  },
-                }}
-              />
-              {error &&
-                ((minChars[i] as number) > 1 ? (
-                  <Typography color="error">
-                    minumum {minChars[i]} characters
-                  </Typography>
-                ) : (
-                  <Typography color="error">
-                    Please write your answer
-                  </Typography>
-                ))}
-            </>
-          )}
-        </Questioncontainer>
+                      ).length >=
+                      minChars[i] - 1
+                    ) {
+                      setError(false);
+                    }
+                  }}
+                  error={error}
+                  helperText={
+                    (answers[answersMap[i] as keyof answersInterface] as string)
+                      .length > 0
+                      ? (
+                          answers[
+                            answersMap[i] as keyof answersInterface
+                          ] as string
+                        ).length
+                      : undefined
+                  }
+                  sx={{
+                    "& .MuiFormHelperText-root": {
+                      textAlign: "right",
+                      marginRight: 0,
+                    },
+                  }}
+                />
+                {error &&
+                  ((minChars[i] as number) > 1 ? (
+                    <Typography color="error">
+                      minumum {minChars[i]} characters
+                    </Typography>
+                  ) : (
+                    <Typography color="error">
+                      Please write your answer
+                    </Typography>
+                  ))}
+              </>
+            )}
+          </Questioncontainer>
+        </Grid>
+        <Grid size={{ xs: 1, md: 3 }} />
       </Grid>
-      <Grid size={{ xs: 1, md: 3 }} />
-    </Grid>
+    </Box>
   );
 };
 
