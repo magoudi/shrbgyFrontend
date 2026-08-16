@@ -192,20 +192,15 @@ const FormPage = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "stretch",
+        width: "100%",
       }}
     >
       <Grid
         container
         sx={{
           width: "100%",
-          minHeight: "100lvh",
+          flex: 1,
           alignItems: "center",
-          boxSizing: "border-box",
-
-          // Protect content from the notch, but not the floating bottom toolbar
-          paddingTop: "env(safe-area-inset-top, 0px)",
-          paddingLeft: "env(safe-area-inset-left, 0px)",
-          paddingRight: "env(safe-area-inset-right, 0px)",
         }}
       >
         <Grid size={{ xs: 1, md: 3 }} />

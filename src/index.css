@@ -60,7 +60,36 @@ html {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background: var(--page-background);
+
+  /*
+   * Safari uses the root canvas behind Liquid Glass,
+   * so the complete background belongs here.
+   */
+  background:
+    radial-gradient(
+      ellipse at 20% 35%,
+      rgba(252, 250, 132, 0.06) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 80% 65%,
+      rgba(250, 247, 96, 0.04) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(45, 45, 27, 0.4) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      transparent 60%,
+      rgba(0, 0, 0, 0.35) 100%
+    ),
+    #08060d;
+
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body {
@@ -69,11 +98,13 @@ body {
   margin: 0;
   padding: 0;
 
-  /* The document must be Safari's scroll container */
+  /*
+   * Safari must scroll the document normally.
+   */
   overflow-x: hidden;
   overflow-y: auto;
 
-  background: var(--page-background);
+  background: transparent;
 }
 
 #root {
@@ -82,26 +113,32 @@ body {
   margin: 0;
   padding: 0;
 
-  /* Do not clip the website at Safari's toolbar */
-  overflow: visible;
   background: transparent;
 }
 
 .app-page {
-  /* Do not use fixed or sticky here */
   position: relative;
 
   width: 100%;
 
   /*
-   * lvh includes the area underneath Safari's floating controls.
-   * It is only a minimum, so longer pages can grow normally.
+   * Fill the currently visible viewport.
+   * Because this is min-height, it grows only when content requires it.
    */
-  min-height: 100vh;
-  min-height: 100lvh;
+  min-height: 100dvh;
 
-  overflow: visible;
-  background: var(--page-background);
+  box-sizing: border-box;
+
+  /*
+   * Background remains visible behind the transparent Safari UI,
+   * while content remains inside the safe areas.
+   */
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+
+  background: transparent;
 }
 
 #social .button-icon {
