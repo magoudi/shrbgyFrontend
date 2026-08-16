@@ -283,12 +283,13 @@ const GetInfo = () => {
             sx={{
               fontFamily: "Cormorant Garamond",
               fontWeight: "bold",
+              color: "white",
               "@media only screen and (max-width: 767px)": {
                 fontSize: "1rem",
               },
             }}
           >
-            Let's get to know you
+            Let's get to know you.
           </Typography>
           <Typography
             variant="h5"
