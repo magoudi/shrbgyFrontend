@@ -10,8 +10,7 @@
   --social-bg: rgba(47, 48, 58, 0.5);
 
   --shadow:
-    rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
-    rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -27,6 +26,16 @@
       ellipse at 80% 65%,
       rgba(250, 247, 96, 0.04) 0%,
       transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(45, 45, 27, 0.4) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      transparent 60%,
+      rgba(0, 0, 0, 0.35) 100%
     ),
     #08060d;
 
@@ -91,7 +100,6 @@ body {
 
 #root {
   width: 100%;
-  min-height: 100vh;
   min-height: 100dvh;
 
   margin: 0;
@@ -99,11 +107,6 @@ body {
 
   display: flex;
   flex-direction: column;
-
-  /*
-   * Transparent so the body's background continues into
-   * Safari's safe areas without changing color.
-   */
   background: transparent;
 }
 
