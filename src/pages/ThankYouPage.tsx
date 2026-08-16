@@ -76,6 +76,7 @@ const ThankYouPage = () => {
           justifyContent: "center",
           alignItems: "center",
           minHeight: "100vh",
+          width: "100vw",
         }}
       >
         <Grid size={{ xs: 1, md: 3 }} />

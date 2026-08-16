@@ -94,6 +94,7 @@ const NextComponent = (props: { setNextPage: () => void }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          width: "100vw",
         }}
       >
         <Container>
@@ -423,7 +424,7 @@ const EnterancePage = () => {
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100lvh",
-        overflow:"auto",
+        overflow: "auto",
         background: `
           radial-gradient(ellipse at 20% 35%, rgba(252, 250, 132, 0.06) 0%, transparent 55%),
           radial-gradient(ellipse at 80% 65%, rgba(250, 247, 96, 0.04) 0%, transparent 55%),

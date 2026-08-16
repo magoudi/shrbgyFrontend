@@ -203,7 +203,7 @@ const FormPage = () => {
         `,
       }}
     >
-      <Grid container>
+      <Grid container sx={{ width: "100vw" }}>
         <Grid size={{ xs: 1, md: 3 }} />
         <Grid
           size={{ xs: 10, md: 6 }}

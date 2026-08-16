@@ -3,7 +3,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { form } from "../constants";
 
 const Container = styled(Box)(({ theme }) => ({
-  width: "80%",
+  width: "100%",
   borderWidth: 1,
   borderColor: theme.palette.secondary.light,
   borderStyle: "solid",
